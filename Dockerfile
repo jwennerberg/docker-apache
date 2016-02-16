@@ -7,11 +7,12 @@ RUN yum update -y; yum clean all
 # Install Apache Web Server
 RUN yum install -y httpd; yum clean all
 
-# Add the tar file of the web site
-ADD mysite.tar /tmp/
+## Add the tar file of the web site
+#ADD mysite.tar /tmp/
+## Docker automatically extracted. So move files to web directory
+#RUN mv /tmp/mysite/* /var/www/html
 
-# Docker automatically extracted. So move files to web directory
-RUN mv /tmp/mysite/* /var/www/html
+ADD assets/index.html /var/www/html/index.html
 
 EXPOSE 80
 
