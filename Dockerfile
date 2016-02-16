@@ -1,4 +1,4 @@
-FROM rhel
+FROM openshift/php:latest
 MAINTAINER Johan Wennerberg <jwennerberg@redhat.com>
 
 # Update the image with the latest packages (recommended)
